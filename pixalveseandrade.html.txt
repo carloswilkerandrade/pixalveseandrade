@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copiar PIX</title>
+</head>
+<body>
+  <a href="#" id="copyLink">Clique aqui para copiar a chave PIX</a>
+
+  <script>
+    const pixKey = "minhachavepixtestando"; // Substitua pela sua chave PIX
+
+    document.getElementById("copyLink").addEventListener("click", (event) => {
+      event.preventDefault(); // Evita que a página recarregue
+      navigator.clipboard.writeText(pixKey)
+        .then(() => {
+          alert("Chave PIX copiada para a área de transferência!");
+        })
+        .catch(err => {
+          alert("Erro ao copiar a chave PIX. Por favor, copie manualmente.");
+        });
+    });
+  </script>
+</body>
+</html>
